@@ -1,0 +1,68 @@
+version: 4.1.15
+steps:
+  - prompt: Identify the navigation menu on the webpage.
+    commands:
+      - command: hover-text
+        text: 全部
+        description: navigation menu item
+        action: hover
+  - prompt: Click on each item in the navigation menu.
+    commands:
+      - command: hover-text
+        text: 全部
+        description: navigation menu item
+        action: click
+      - command: hover-text
+        text: 图片工具
+        description: navigation menu item
+        action: click
+      - command: hover-text
+        text: PDF转换工具
+        description: navigation menu item
+        action: click
+  - prompt: Click on each item in the navigation menu.
+    commands:
+      - command: hover-text
+        text: 数据转换工具
+        description: navigation menu item
+        action: click
+      - command: hover-text
+        text: 生活娱乐工具
+        description: navigation menu item
+        action: click
+      - command: hover-text
+        text: 教育工具
+        description: navigation menu item
+        action: click
+      - command: hover-text
+        text: 文本工具
+        description: navigation menu item
+        action: click
+      - command: hover-text
+        text: 文档转换工具
+        description: navigation menu item
+        action: click
+      - command: hover-text
+        text: 开发工具
+        description: navigation menu item
+        action: click
+      - command: hover-text
+        text: 视频工具
+        description: navigation menu item
+        action: click
+      - command: hover-text
+        text: 浏览器插件
+        description: navigation menu item
+        action: click
+  - prompt: >-
+      Assert that each click leads to the correct page without errors.  # Use
+      the content of the file from the environment
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: 全部
+        description: navigation menu item
+        action: click
+      - command: assert
+        expect: the page contains "全部工具"
