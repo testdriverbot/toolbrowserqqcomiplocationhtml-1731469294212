@@ -1,0 +1,16 @@
+version: 4.1.15
+steps:
+  - prompt: Identify the main call to action button on the webpage.
+    commands:
+      - command: hover-text
+        text: 确认
+        description: main call to action button
+        action: hover
+  - prompt: Click the main call to action button.
+    commands:
+      - command: hover-text
+        text: 确认
+        description: main call to action button
+        action: click
+      - command: wait-for-text
+        text: 操作成功
